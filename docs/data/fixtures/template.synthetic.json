@@ -1,0 +1,15 @@
+{
+  "syntheticOnly": true,
+  "scenarios": [
+    {
+      "name": "normal",
+      "input": {},
+      "expected": {}
+    },
+    {
+      "name": "boundary",
+      "input": {},
+      "expected": {}
+    }
+  ]
+}
