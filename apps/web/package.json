@@ -1,0 +1,24 @@
+{
+  "name": "@equipo10/web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vike dev --port 5173",
+    "build": "vike build",
+    "preview": "vike preview --port 4173",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@equipo10/contracts": "workspace:*",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "vike": "^0.4.268",
+    "vike-react": "^0.6.31"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.7"
+  }
+}

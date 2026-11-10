@@ -1,33 +1,33 @@
-# [Nombre del skill]
+# [Skill name]
 
-## Objetivo
+## Objective
 
-[Completar]
+[Complete]
 
-## Cuándo usarlo
+## When to Use It
 
-[Completar]
+[Complete]
 
-## Contexto y entradas
+## Context and Inputs
 
-[Completar]
+[Complete]
 
-## Flujo
+## Workflow
 
-1. [Completar]
+1. [Complete]
 
-## Resultado esperado
+## Expected Result
 
-[Completar]
+[Complete]
 
-## Verificaciones
+## Checks
 
-[Completar]
+[Complete]
 
-## Límites y revisión humana
+## Limits and Human Review
 
-[Completar]
+[Complete]
 
-## Ejemplo
+## Example
 
-[Completar]
+[Complete]

@@ -1,40 +1,77 @@
-# Requisitos y plan
+# Requirements and Plan
 
-## Objetivos
+## Objectives
 
-[Definir los resultados que busca el equipo]
+- Prepare an MVP that lets recruiting track the history of people entering hiring processes, including interview participants from any source channel.
+- Show which roles each person has been considered for and record stage and outcome per application.
+- Retain useful information for human review when future roles open.
+- Complete the project within the five-week training program and practice cross-focus work in an understandable repository.
 
-## Alcance dentro
+## Scope
 
-[Enumerar lo que incluye el proyecto]
+### Agreed Direction
 
-## Alcance fuera
+- Include people entering the process regardless of referral status, and retain the history of candidates who have participated in interviews through other channels.
+- Keep a person's profile distinct from applications to different roles.
+- Track stage and outcome, and retain a summary of capabilities for human review in future roles.
+- Keep recruiting responsible for coordination and candidate contact.
 
-[Enumerar lo que queda excluido]
+### First Vertical Proposed by the Prototype
 
-## Criterios de aceptación
+1. Find an existing profile.
+2. Link it to a role and create a role-specific application.
+3. Update that application's stage and outcome without changing the source profile.
 
-[Definir resultados observables en `docs/qa/acceptance.md`]
+The HTML also shows a reusable pool, anonymized summaries for hiring managers, profile maintenance, and administration. These views are discussion concepts; the team must confirm whether they belong in the MVP.
 
-## Plan del proyecto
+### Outside the First Vertical Described
 
-| Hito o tarea | Responsable | Fecha o periodo | Estado |
+- Employee-submitted referrals.
+- Integration or synchronization with the existing recruiting/referral system.
+- Automated advancement, hiring, ranking, or matching decisions.
+- Real candidate data or production deployment during initial project preparation.
+
+## Initial Acceptance Criteria
+
+These criteria derive from the prototype's first vertical and need team review before becoming implementation tickets:
+
+- Recruiting can find an existing synthetic profile and link it to a role.
+- Linking creates or represents an application for that role without editing the source profile.
+- Stage and outcome are stored on the relevant application; one profile can have applications for multiple roles.
+- The interface can find applications by role and stage.
+- The future-candidate pool does not determine eligibility automatically; people define and review any reuse filters.
+- Information presented to a hiring manager does not reveal direct identifiers until the team agrees on access and sharing flows.
+
+## Current Point and Work Plan
+
+| Milestone or activity | Initial owner | Date / period | Status based on the assets |
 |---|---|---|---|
-| [Completar] | [Completar] | [Completar] | [Completar] |
+| Kick-off, team organization, and orientation to week-one deliverables | Team / program mentors | 3 Nov 2026 | Training context documented |
+| Select the project and discuss flexible focus assignments | Team | 5 Nov 2026 | Project selected; initial focuses discussed |
+| Define MVP direction and prepare an initial visual concept | Team | 6 Nov 2026 and later prototype | Direction and initial boundaries discussed; detailed rules remain open |
+| Align the brief, criteria, plan, architecture, and repository with the week-one guide | Team | Week 1 | In progress; this update records the asset context |
+| Break work down by focus and agree on the next increment | Team | Next coordination | Mentioned as a next step; completion is not confirmed by the assets |
 
-## Dependencias
+## Team Coordination
 
-[Enumerar las dependencias del proyecto]
+The program suggests Frontend, Backend/API, Data, and QA focuses. The assignments discussed on 5 November are a flexible starting point:
 
-## Coordinación del equipo
-
-[Registrar focos, responsables y acuerdos de coordinación. Compartir contratos, criterios y decisiones entre los focos.]
-
-| Foco | Entregable | Revisión compartida |
+| Team member | Initial focus discussed | Coordination |
 |---|---|---|
-| Backend/API | `docs/api/contract.md` y `packages/contracts/src/index.ts` | Revisar un ejemplo de éxito y uno de error con Frontend, Datos y QA; alinear request, response y errores con el flujo, criterios y modelo. |
-| Datos | `docs/data/model.md` y fixture sintético versionado | Confirmar que cada dato del contrato y los criterios tenga lugar en el modelo; revisar relaciones, campos requeridos y restricciones con ejemplos normal y límite. |
-| Frontend | `docs/product/screen-flow.md` | Para cada paso, alinear acción y campos con el contrato; contemplar carga, resultado, vacío y error. |
-| QA | `docs/product/brief.md` y `docs/qa/acceptance.md` | Escribir criterios Given / When / Then; incluir flujo normal, límite, entrada inválida y caso vacío o de error, con evidencia y comando de verificación acordados. |
+| Nayib Vargas | Backend/API and data; possible deployment/cloud support | Coordinate contracts and model with Sergio and the other focuses |
+| Sergio Mora Araya | Backend/API and data | Coordinate with Nayib; boundaries across API, data, and deployment remain open |
+| Christopher Sanchez | Frontend / user experience | Work on the screen flow with Javier |
+| Javier Gamboa Mora | Frontend / user experience and planning support | Support coordination; assignments remain flexible |
+| Marcos Blanco | Mentor and reviewer | Questions, materials, and feedback on the repository and PR |
 
-Los focos coordinan el trabajo; el equipo revisa en conjunto los contratos, criterios y decisiones antes de dividir tareas dependientes.
+The team should review contracts, the data model, criteria, and decisions together before splitting dependent tasks.
+
+## Dependencies and Open Decisions
+
+- Define stages, transitions, and outcomes to retain per role.
+- Define human criteria and role-specific checklists for considering a candidate reusable, including required skills and how to handle evidence from different or older processes.
+- Agree on how a person's profile relates to applications for different roles and how to summarize the skills profile.
+- Agree on what hiring managers can see, whether they use the app directly, and how summaries are anonymized.
+- Confirm the profile source, loading method, and data ownership; connecting to the existing system was left as possible later work.
+- Choose the SQL driver before configuring Drizzle, connections, or migrations.
+- Decide whether a product-facing AI feature belongs in scope. Reading or summarizing feedback and mapping requirements were discussed as possibilities, not approved scope.

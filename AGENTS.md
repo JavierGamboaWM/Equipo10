@@ -1,37 +1,61 @@
-# Contexto para agentes
+# AGENTS.md
 
-## Propósito del proyecto
+## Product Purpose
 
-[Completar]
+The team is preparing a training MVP for tracking people who enter hiring processes across hiring waves, including candidates who participated in interviews regardless of whether they came through a referral or another channel. The intended workflow links an existing candidate profile to a role, records progress and outcome for that role, and helps recruiters review prior candidates for future openings. The app is a candidate and hiring-pipeline tracker; it does not replace the source recruiting system.
 
-## Mapa del repositorio
+The current first-slice concept and unresolved scope are recorded in `docs/product/brief.md`, `docs/product/screen-flow.md`, and `docs/requirements-and-plan.md`. The concept prototype is a discussion artifact; its placeholder reuse rules and skill ratings are not approved business logic.
 
-- `apps/`: aplicaciones del proyecto.
-- `packages/`: código compartido, si aplica.
-- `docs/product/brief.md`: contexto y alcance acordado.
-- `docs/product/screen-flow.md`: pantallas, acciones y estados.
-- `docs/requirements-and-plan.md`: requisitos, alcance y plan.
-- `docs/architecture-and-design.md`: arquitectura y diseño.
-- `docs/api/contract.md`: contrato entre interfaz y API.
-- `docs/data/model.md`: modelo inicial y fixture sintético.
-- `docs/qa/acceptance.md`: criterios y verificaciones.
-- `packages/contracts/src/index.ts`: tipos compartidos acordados.
-- `skills/`: skills del equipo y su plantilla.
+## Repo Map
 
-## Comandos
+- `apps/api/`: Bun + Hono API, route handlers, database integration, tests, and Drizzle migrations.
+- `apps/web/`: React + Vike web application.
+- `packages/contracts/`: shared Zod contracts.
+- `docs/product/brief.md`: user, need, current context, constraints, and scope.
+- `docs/product/screen-flow.md`: current role-pipeline concept and screen states.
+- `docs/requirements-and-plan.md`: objectives, scope, training plan, team coordination, and open decisions.
+- `docs/architecture-and-design.md`: components, data flow, contracts, and initial model.
+- `docs/architecture/`: space for architecture diagrams and decision records.
+- `docs/api/contract.md`: API operations and shared payloads.
+- `docs/data/`: initial model and synthetic fixtures.
+- `docs/backlog/`: proposed and approved work items.
+- `docs/qa/acceptance.md`: acceptance criteria and verification evidence.
+- `docs/delivery/`: delivery and release notes.
+- `docs/decisions/`: technical decisions.
+- `.codex/instructions.md`: pointer to this file.
+- `.github/pull_request_template.md`: PR handoff.
 
-- Inicio: [comando acordado]
-- Desarrollo: [comando acordado]
-- Validación: [comando acordado]
+## Tech Stack
 
-## Convenciones
+- Runtime and package manager: Bun workspaces.
+- API: Hono on Bun.
+- Web: React, strict TypeScript, Vike, and `vike-react`; Vike uses Vite.
+- Database access: Drizzle ORM with SQL. The team has not selected a database driver; record that decision before configuring a connection or migrations.
+- Shared request/response contracts: Zod in `packages/contracts`.
+- AI SDK/provider and any product-facing AI capability: not selected or approved. Do not infer automated candidate evaluation, scoring, screening, or recommendations from the prototype discussion.
 
-[Completar con los acuerdos del equipo]
+## Setup Commands
 
-## Plan aprobado
+Run from the repository root:
 
-[Enlace al plan vigente]
+- Install dependencies: `bun install`
+- Start API and web: `bun run dev`
+- Start API only: `bun run dev:api`
+- Start web only: `bun run dev:web`
+- Check TypeScript: `bun run typecheck`
 
-## Decisiones que requieren revisión humana
+## Backlog Rules
 
-[Completar con los acuerdos del equipo]
+Record proposed and approved work in `docs/backlog/`, and link implementation to its acceptance criteria. Keep dependencies, ownership, and status visible in the project plan. Preserve the distinction between team agreements, prototype suggestions, and unresolved decisions. Do not add product behavior, AI capabilities, or database choices that the team has not approved.
+
+## Security
+
+- Never commit credentials, tokens, populated environment files, candidate resumes, or real candidate data.
+- Use synthetic candidate profiles, applications, skills, and outcomes in fixtures and tests.
+- Validate API inputs and shared payloads with Zod.
+- Candidate status, interview outcomes, skills, and any future-candidate eligibility remain human-recorded and human-reviewed. Do not create automated hiring decisions or infer candidate rankings.
+- Review changes to candidate data access, retention, secrets, external integrations, and AI capabilities with a human before merging.
+
+## PR Handoff
+
+Use `.github/pull_request_template.md`. Keep changes within approved scope; align screens, API contracts, shared types, data model, and acceptance criteria. Report commands run and results. Call out schema/migration effects, candidate-data handling, unresolved product decisions, and any required human review.

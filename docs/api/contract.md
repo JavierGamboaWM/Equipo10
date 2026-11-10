@@ -1,29 +1,28 @@
-# Contrato de API
+# API Contract
 
-## Operación: [Nombre]
+## Implemented: Health Check
 
-- **Método y ruta:** [Completar]
-- **Request:** [Campos y tipos]
-- **Validaciones:** [Completar]
-- **Respuesta de éxito:** [Código y forma]
-- **Errores:** [Código, forma y condición]
+- **Method and path:** `GET /api/health`
+- **Request:** no body.
+- **Validation:** the response is validated with `healthResponseSchema`.
+- **Success response:** `200`, `{ "status": "ok" }`.
+- **Errors:** product errors are not documented yet.
+- **Implementation:** `apps/api/src/routes/health.ts`.
 
-### Ejemplo de éxito
+### Success example
 
-```text
-[Completar con un ejemplo concreto]
+```json
+{ "status": "ok" }
 ```
 
-### Ejemplo de error
+## Candidate and Application Operations
 
-```text
-[Completar con un ejemplo concreto]
-```
+No product routes have been approved or implemented. The prototype suggests finding profiles, linking a profile to a role, and updating the application's stage/outcome. Define request, response, validation, permissions, and errors when the team approves those behaviors.
 
-## Tipos compartidos
+## Shared Types
 
-Mantener los nombres y formas acordados en `packages/contracts/src/index.ts`.
+Keep names and shapes aligned with `packages/contracts/src/index.ts`. Do not turn HTML demo options into enums or business rules without team review.
 
-## Verificación entre focos
+## Cross-Focus Verification
 
-[Revisar ejemplos de éxito y error con Frontend, Datos y QA. Alinear request, response y errores con el flujo de pantalla, los criterios y el modelo.]
+Review success and error examples with Frontend, Data, and QA. Align each field with the screen flow, criteria, and model; record who can read or change the data.

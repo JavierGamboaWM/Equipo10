@@ -1,15 +1,39 @@
 {
   "syntheticOnly": true,
-  "scenarios": [
+  "notice": "Synthetic examples include referral and other entry channels. Stage, outcome, and skill fields are not final product enums or reuse criteria.",
+  "candidateProfiles": [
     {
-      "name": "normal",
-      "input": {},
-      "expected": {}
+      "candidateId": "candidate-sample-001",
+      "source": "Referral",
+      "skills": ["SQL", "Reporting"]
     },
     {
-      "name": "boundary",
-      "input": {},
-      "expected": {}
+      "candidateId": "candidate-sample-002",
+      "source": "Other",
+      "skills": ["Python", "Data modeling"]
+    }
+  ],
+  "roleApplications": [
+    {
+      "applicationId": "application-sample-001",
+      "candidateId": "candidate-sample-001",
+      "role": "Data Analyst",
+      "stage": "Interview",
+      "outcome": null
+    },
+    {
+      "applicationId": "application-sample-002",
+      "candidateId": "candidate-sample-001",
+      "role": "Analytics Consultant",
+      "stage": "Screening",
+      "outcome": null
+    },
+    {
+      "applicationId": "application-sample-003",
+      "candidateId": "candidate-sample-002",
+      "role": "Data Engineer",
+      "stage": "Interview",
+      "outcome": "Not selected"
     }
   ]
 }
