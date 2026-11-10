@@ -1,6 +1,6 @@
 # Team 10 · Candidate Pipeline
 
-A training MVP concept for tracking candidates across hiring processes and waves, including people who participated in interviews through referrals or any other channel. The current direction is to start from an existing candidate profile, link it to a role, and track that role-specific application's stage and outcome. The team has not approved production use or an integration with the existing recruiting source.
+An application for tracking candidates who have participated in interviews, whether referred or sourced through another channel, across roles and hiring waves. Recruiters can link an existing profile to a role and record the stage and outcome of that role-specific application. Integration with the existing recruiting source is not part of the current setup.
 
 ## Quick start
 
