@@ -1,0 +1,17 @@
+{
+  "name": "@equipo10/api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot src/index.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@equipo10/contracts": "workspace:*",
+    "drizzle-orm": "^0.45.4",
+    "hono": "^4.13.17"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}

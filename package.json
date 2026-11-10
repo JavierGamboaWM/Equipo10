@@ -1,0 +1,14 @@
+{
+  "name": "equipo10-candidate-pipeline",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun run --parallel --filter @equipo10/api --filter @equipo10/web dev",
+    "dev:api": "bun run --filter @equipo10/api dev",
+    "dev:web": "bun run --filter @equipo10/web dev",
+    "typecheck": "bun run --sequential --filter '@equipo10/*' typecheck"
+  }
+}
